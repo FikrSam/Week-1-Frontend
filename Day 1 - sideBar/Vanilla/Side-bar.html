@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NotionMini Sidebar Fixed</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #121212;
+      position: relative;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    aside {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      background: #1e1e1e;
+      border-right: 1px solid #333;
+      padding: 0.75rem;
+      transition: transform 0.3s ease-out;
+    }
+
+    aside.collapsed {
+      transform: translateX(-100%);
+    }
+
+    main {
+      height: 100%;
+      margin-left: 190px;
+      transition: margin-left 0.3s ease-out;
+      padding: 1rem;
+      color: #ddd;
+    }
+
+    aside.collapsed ~ main {
+      margin-left: -5px;
+    }
+
+
+    button {
+      width: 20px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+    }
+
+    button img {
+      width: 15px;
+      height: 15px;
+    }
+  </style>
+</head>
+<body>
+  
+  <aside id="sidebar">
+  </aside>
+
+  <main>
+      <button onclick="toggleSidebar()">
+        <img src="Sidebar.svg" alt="toggle-sidebar" title="toggleSidebar"/>
+      </button>
+  </main>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('collapsed');
+    }
+  </script>
+</body>
+</html>
