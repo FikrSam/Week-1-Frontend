@@ -10,7 +10,7 @@ This is part of my personal commitment to grow as a developer by building small,
 | Day | Challenge | Status |
 |-----|---------------------------|--------|
 | 1 | Collapsible Sidebar (React) | ✅ Done |
-| 2 | Animated Button | 🔜 |
+| 2 | Animated Button | ✅ Done |
 | 3 | Simple Landing Page | 🔜 |
 | 4 | Git Workflow Exercise | 🔜 |
 | 5 | CSS Art | 🔜 |
