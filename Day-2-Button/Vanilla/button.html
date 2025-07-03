@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-2-Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: futura;
+            margin-bottom: 30px;
+        }
+        body{
+            background-color: gainsboro;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        .btn{
+            background-color: red;
+            color: white;
+            font-size: large;
+            padding: 10px 25px ;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 0 rgb(189, 20, 20), 0 20px 0 rgba(0, 0, 0, 0.308);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 12px 0 rgb(189, 20, 20), 0 24px 0 rgba(0, 0, 0, 0.308);
+
+        }
+
+        .btn:active{
+            transform: translateY(8px);
+            box-shadow: 0 2px 0 rgb(189, 20, 20), 0 4px 0 rgba(0, 0, 0, 0.308);
+        }
+        .btn2{
+            background-color: rgb(0, 155, 203);
+            color: white;
+            font-size: large;
+            padding: 10px 25px ;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 0 rgb(1, 97, 126), 0 10px 0 rgba(0, 0, 0, 0.308);
+            transition: all 0.3s ease;
+        }
+
+        /* .btn2:hover{
+            transform: translateY(-2.5px);
+            box-shadow: 0 6px 0 rgb(189, 20, 20), 0 12px 0 rgba(0, 0, 0, 0.308);
+
+        } */
+
+        .btn2:active{
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 rgb(1, 97, 126), 0 4px 0 rgba(0, 0, 0, 0.308);
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">
+        Click me
+    </button>
+
+    <button class="btn2">
+        Push down
+    </button>
+</body>
+</html>
