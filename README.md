@@ -7,15 +7,15 @@ This is part of my personal commitment to grow as a developer by building small,
 
 ## 📅 **What’s Inside**
 
-| Day | Challenge | Status |
-|-----|---------------------------|--------|
-| 1 | Collapsible Sidebar (React) | ✅ Done |
-| 2 | Animated Button | ✅ Done |
-| 3 | Simple Landing Page | 🔜 |
-| 4 | Git Workflow Exercise | 🔜 |
-| 5 | CSS Art | 🔜 |
-| 6 | JS Utility | 🔜 |
-| 7 | Refactor/Review | 🔜 |
+| Day   | Challenge             | Requirements                                                                                                                                                 | Status  |
+| ----- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -----   |
+| **1** | Collapsible Sidebar   | - HTML, CSS, **React**<br>- Toggle open/close using state<br>- Smooth CSS transition (bonus)<br>- Clean structure                                            | ✅ Done |
+| **2** | Animated Button       | - **Vanilla HTML + CSS**<br>- One or more CTA buttons<br>- Hover + active effects<br>- Use `transform`, `box-shadow`, `transition`                           | ✅ Done |
+| **3** | Simple Landing Page   | - HTML & CSS only<br>- Include header, hero section, CTA button<br>- Basic layout & typography<br>- Make it look neat                                        | 🔜      |
+| **4** | Git Workflow Practice | - Create a repo clone<br>- Make a new branch<br>- Add/change a file<br>- Commit, merge, push<br>- Write clear commit messages                                | 🔜      |
+| **5** | CSS Art               | - Draw a simple shape/icon with **pure CSS**<br>- No images or SVGs<br>- Keep it recognizable & neat                                                         | 🔜      |
+| **6** | JS Utility            | - Write a small **vanilla JS** app<br>- Example: clock, random quote, counter<br>- Include basic DOM manipulation                                            | 🔜      |
+| **7** | Refactor & Polish     | - Pick any project from Days 1–6<br>- Refactor messy parts<br>- Add missing features (e.g., responsiveness)<br>- Write clean commit notes about improvements | 🔜      |
 
 ---
 
