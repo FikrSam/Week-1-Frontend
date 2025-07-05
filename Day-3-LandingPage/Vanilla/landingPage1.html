@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scouts</title>
+    <style>
+      :root {
+        --primary: #f4f4f4;
+        --secondary: #ffd700;
+        --tertiary: #b40000;
+        --big: 90px;
+        --medium: 30px;
+        --subheaders: 25px;
+        --base-margin: 0 220px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: ditty;
+        color: var(--primary);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: black;
+        overscroll-behavior-y: contain;
+        height: 100%;
+        /* overscroll-behavior-y: none; */
+        overflow-x: hidden; /* extra safety */
+      }
+
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: normal;
+      }
+
+      /*====BACKGROUND IMAGE====*/
+      .bg-overlay {
+        background-image: url(assets/Blurred\ Flight\ Remix.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: -2;
+        opacity: 0.5;
+      }
+
+      /*====Vertical line====*/
+      .vert-line {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        margin-left: 170px;
+        border-left: 1px solid var(--secondary);
+      }
+      .vert-line2 {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        margin-left: 180px;
+        border-left: 1px solid var(--primary);
+      }
+
+      /*====HEADER====*/
+
+      header {
+        /* border: 5px solid var(--secondary); */
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        margin: var(--base-margin);
+        font-size: var(--medium);
+        position: sticky;
+        top: 0;
+        /* z-index: 1; */
+      }
+      header ul {
+        display: flex;
+        gap: 80px;
+        list-style: none;
+      }
+      header ul li a {
+        color: var(--secondary);
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      header ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--tertiary);
+        transition: width 0.3s ease;
+      }
+      header ul li a:hover {
+        color: var(--tertiary);
+        cursor: pointer;
+      }
+      header ul li a:hover::after {
+        width: 100%;
+      }
+
+      /*====SECTIONS====*/
+
+      /*====HERO====*/
+      .hero {
+        margin: var(--base-margin);
+        height: 100vh; /*Good for different devices but might have to edit this alot later*/
+        /* height: 1010px;  works too*/
+        /* border: 3px solid red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .text {
+        /* border: 3px solid green; */
+        width: 800px;
+        vertical-align: center;
+        margin-left: 30px;
+      }
+
+      .text h1 {
+        color: var(--secondary);
+        font-size: var(--big);
+        margin-bottom: 30px;
+      }
+
+      .text p {
+        font-size: var(--medium);
+        /* line-height: 20px; */
+      }
+
+      .text button {
+        font-family: ditty;
+        font-size: var(--medium);
+        color: var(--secondary);
+        margin-top: 30px;
+        padding: 10px 50px;
+        background-color: transparent;
+        border: 5px solid var(--secondary);
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+
+      .text button:hover {
+        color: black;
+        background-color: var(--secondary);
+      }
+
+      .logo img {
+        /* border: 3px solid blue; */
+        height: 700px;
+        margin-right: 25px;
+      }
+
+      /*====ABOUT====*/
+      .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 250px;
+        background-color: black;
+        height: 100vh;
+        z-index: -1;
+      }
+
+      .about h1 {
+        color: var(--secondary);
+        font-size: var(--big);
+        margin-bottom: 30px;
+      }
+
+      .about p {
+        width: 800px;
+        font-size: var(--medium);
+      }
+      /*====footer====*/
+      footer {
+        text-align: center;
+        background-color: black;
+        height: 30px;
+        padding: 20px 0;
+        border-top: 3px solid var(--secondary);
+      }
+
+      /*Bonus*/
+      .text p,
+      .about p {
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>SCOUTS</h2>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#home">JOIN</a></li>
+      </ul>
+    </header>
+    <div class="vert-line"></div>
+    <div class="vert-line2"></div>
+    <div class="bg-overlay"></div>
+
+    <section class="hero" id="home">
+      <div class="text">
+        <h1>Rise Beyond the Walls</h1>
+        <p>
+          Humanity hides behind towering walls, clinging to fear and silence.
+          But we, the Scouts, know freedom lives beyond the stone — where Titans
+          roam and courage is tested. We do not cower. We charge forward, blades
+          drawn and hearts united, for a future without chains.
+        </p>
+        <button>JOIN NOW</button>
+      </div>
+      <div class="logo">
+        <img src="assets/scouts-emblem.png" alt="" />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="text2">
+        <h1>Who We Are</h1>
+        <p>
+          Founded in the darkest days of humanity’s fight for survival, the
+          Scout Regiment stands as the spearhead of mankind’s resolve. Where
+          others see impenetrable walls, we see new frontiers to reclaim. Where
+          fear holds the masses back, our mission drives us forward — into the
+          unknown, beyond the safety of stone and steel, where Titans roam and
+          secrets lie buried. Each expedition tests our courage, our unity, and
+          our unbreakable spirit. We are more than soldiers; we are humanity’s
+          last hope, its vanguard of freedom, and its first step toward a future
+          without chains. Every member bears the Wings of Freedom not as a
+          symbol, but as a promise: that one day, these walls will fall, and
+          mankind will stand proud beneath an open sky once more.
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p>© 845 – 2025 Scout Regiment. Humanity’s Last Hope.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scouts</title>
+    <style>
+      :root {
+        --primary: #f4f4f4;
+        --secondary: #ffd700;
+        --tertiary: #b40000;
+        --big: 90px;
+        --medium: 30px;
+        --subheaders: 25px;
+        --base-margin: 0 220px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: ditty;
+        color: var(--primary);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: black;
+        overscroll-behavior-y: contain;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: normal;
+      }
+
+      /*====BACKGROUND IMAGE====*/
+      .bg-overlay {
+        background-image: url(assets/Dynamic\ Aerial\ Action\ Remix_upscayl_2x_upscayl-standard-4x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: -2;
+      }
+
+      /*====Vertical line====*/
+      .vert-line {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        left: 170px;
+        border-left: 1px solid var(--secondary);
+      }
+      .vert-line2 {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        left: 180px;
+        border-left: 1px solid var(--primary);
+      }
+
+      /*====HEADER====*/
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        margin: var(--base-margin);
+        font-size: var(--medium);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 80px;
+        list-style: none;
+      }
+
+      .nav-links li a {
+        color: var(--secondary);
+        position: relative;
+        transition: color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--tertiary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links li a:hover {
+        color: var(--tertiary);
+        cursor: pointer;
+      }
+
+      .nav-links li a:hover::after {
+        width: 100%;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 101;
+      }
+
+      .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--secondary);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+
+      /* Mobile Menu - Default (Phone) */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 99;
+        transition: transform 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .mobile-menu.active {
+        transform: translateX(-100%);
+      }
+
+      .mobile-menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .mobile-menu ul li a {
+        color: var(--secondary);
+        font-size: 24px;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+      }
+
+      .mobile-menu ul li a:hover {
+        color: var(--tertiary);
+        border-bottom: 1px solid var(--tertiary);
+      }
+
+      /* Tablet-specific menu styles */
+      @media (min-width: 577px) and (max-width: 992px) {
+        .mobile-menu {
+          width: 300px;
+          left: auto;
+          right: -300px;
+          transform: none;
+          border-left: 1px solid var(--secondary);
+        }
+
+        .mobile-menu.active {
+          transform: translateX(-300px);
+        }
+      }
+
+      /*====SECTIONS====*/
+
+      /*====HERO====*/
+      .hero {
+        margin: var(--base-margin);
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .text {
+        width: 800px;
+        vertical-align: center;
+        margin-left: 30px;
+      }
+
+      .text h1 {
+        color: var(--secondary);
+        font-size: var(--big);
+        margin-bottom: 30px;
+      }
+
+      .text p {
+        font-size: var(--medium);
+      }
+
+      .text button {
+        font-family: ditty;
+        font-size: var(--medium);
+        color: var(--secondary);
+        margin-top: 30px;
+        padding: 10px 50px;
+        background-color: transparent;
+        border: 5px solid var(--secondary);
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+
+      .text button:hover {
+        color: black;
+        background-color: var(--secondary);
+      }
+
+      .logo img {
+        height: 700px;
+        margin-right: 25px;
+      }
+
+      /*====ABOUT====*/
+      .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 250px;
+        background-color: black;
+        height: 100vh;
+        z-index: -1;
+      }
+
+      .about h1 {
+        color: var(--secondary);
+        font-size: var(--big);
+        margin-bottom: 30px;
+      }
+
+      .about p {
+        width: 800px;
+        font-size: var(--medium);
+      }
+
+      /*====footer====*/
+      footer {
+        text-align: center;
+        background-color: black;
+        height: 30px;
+        padding: 20px 0;
+        border-top: 3px solid var(--secondary);
+      }
+
+      /*Bonus*/
+      .text p,
+      .about p {
+        line-height: 1.5;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1600px) {
+        :root {
+          --base-margin: 0 150px;
+          --big: 70px;
+          --medium: 25px;
+        }
+        .vert-line {
+          left: 150px;
+        }
+        .vert-line2 {
+          left: 160px;
+        }
+        .text, .about p {
+          width: 600px;
+        }
+        .logo img {
+          height: 600px;
+        }
+        .about {
+          padding-left: 200px;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        :root {
+          --base-margin: 0 100px;
+          --big: 60px;
+          --medium: 22px;
+        }
+        .vert-line {
+          left: 100px;
+        }
+        .vert-line2 {
+          left: 110px;
+        }
+        .text, .about p {
+          width: 500px;
+        }
+        .logo img {
+          height: 500px;
+        }
+        .about {
+          padding-left: 150px;
+        }
+        .nav-links {
+          gap: 50px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        :root {
+          --base-margin: 0 50px;
+          --big: 50px;
+          --medium: 20px;
+        }
+        .vert-line, .vert-line2 {
+          display: none;
+        }
+        .hero {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          height: auto;
+          padding: 100px 0;
+        }
+        .text {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 50px;
+        }
+        .logo img {
+          height: 400px;
+          margin-right: 0;
+        }
+        .about {
+          padding-left: 50px;
+          height: auto;
+          padding: 100px 50px;
+        }
+        .about p {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --base-margin: 0 20px;
+          --big: 40px;
+          --medium: 18px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .logo img {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        :root {
+          --big: 32px;
+          --medium: 16px;
+        }
+        .text button {
+          padding: 8px 30px;
+          font-size: 18px;
+        }
+        .logo img {
+          height: 250px;
+        }
+        footer p {
+          font-size: 14px;
+        }
+
+        .mobile-menu ul li a {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h2>SCOUTS</h2>
+        <nav class="desktop-nav">
+          <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#home">JOIN</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#home">JOIN</a></li>
+      </ul>
+    </div>
+
+    <div class="vert-line"></div>
+    <div class="vert-line2"></div>
+    <div class="bg-overlay"></div>
+
+    <section class="hero" id="home">
+      <div class="text">
+        <h1>Rise Beyond the Walls</h1>
+        <p>
+          Humanity hides behind towering walls, clinging to fear and silence.
+          But we, the Scouts, know freedom lives beyond the stone — where Titans
+          roam and courage is tested. We do not cower. We charge forward, blades
+          drawn and hearts united, for a future without chains.
+        </p>
+        <button>JOIN NOW</button>
+      </div>
+      <div class="logo">
+        <img src="assets/scouts-emblem.png" alt="" />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="text2">
+        <h1>Who We Are</h1>
+        <p>
+          Founded in the darkest days of humanity's fight for survival, the
+          Scout Regiment stands as the spearhead of mankind's resolve. Where
+          others see impenetrable walls, we see new frontiers to reclaim. Where
+          fear holds the masses back, our mission drives us forward — into the
+          unknown, beyond the safety of stone and steel, where Titans roam and
+          secrets lie buried. Each expedition tests our courage, our unity, and
+          our unbreakable spirit. We are more than soldiers; we are humanity's
+          last hope, its vanguard of freedom, and its first step toward a future
+          without chains. Every member bears the Wings of Freedom not as a
+          symbol, but as a promise: that one day, these walls will fall, and
+          mankind will stand proud beneath an open sky once more.
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p>© 845 – 2025 Scout Regiment. Humanity's Last Hope.</p>
+    </footer>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const body = document.body;
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+
+        // Prevent scrolling when menu is open
+        if (mobileMenu.classList.contains('active')) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = '';
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = document.querySelectorAll('.mobile-menu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking outside on tablet
+      mobileMenu.addEventListener('click', (e) => {
+        if (window.innerWidth > 576 && e.target === mobileMenu) {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+
+      // Adjust vertical lines position based on content margin
+      function adjustVerticalLines() {
+        const baseMargin = getComputedStyle(document.documentElement)
+          .getPropertyValue('--base-margin')
+          .split(' ')[1];
+
+        if (baseMargin) {
+          const marginValue = parseInt(baseMargin);
+          if (!isNaN(marginValue)) {
+            document.querySelector('.vert-line').style.left = `${marginValue - 50}px`;
+            document.querySelector('.vert-line2').style.left = `${marginValue - 40}px`;
+          }
+        }
+      }
+
+      // Initial adjustment
+      adjustVerticalLines();
+
+      // Adjust on window resize
+      window.addEventListener('resize', adjustVerticalLines);
+    </script>
+  </body>
+</html>
