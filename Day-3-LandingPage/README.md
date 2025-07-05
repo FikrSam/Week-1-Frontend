@@ -50,7 +50,6 @@ Week-1-Frontend/
 - Planned improvements: mobile adjustments, fluid layout, possible React version in the future.
 
 ## 🔍 Notes
-- The background image was AI-generated with an AoT-inspired prompt.
 - Vertical lines add visual structure to frame the page.
 - Sticky header keeps nav accessible at all times.
 - Good practice for flexbox, CSS custom props, and layered layout.
