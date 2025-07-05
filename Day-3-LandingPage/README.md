@@ -27,7 +27,7 @@ Build a simple, themed landing page using **vanilla HTML and CSS**, featuring:
   - Body: `"Segoe UI", Tahoma, Geneva, Verdana, sans-serif`
 
 ## 📂 Structure
-
+```
 Week-1-Frontend/
 └── Day-3-LandingPage/
     ├── React/
@@ -38,7 +38,7 @@ Week-1-Frontend/
         │ ├── background-image.png
         │ └── scouts-emblem.png
         └─── README.md
-
+```
 
 ## 🚀 How to Run
 1. Clone this folder.
