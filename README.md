@@ -7,11 +7,11 @@ This is part of my personal commitment to grow as a developer by building small,
 
 ## 📅 **What’s Inside**
 
-| Day   | Challenge             | Requirements                                                                                                                                                 | Status  |
-| ----- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -----   |
+| Day   | Challenge             | Requirements                                                                                                                                                 | Status |
+| ----- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
 | **1** | Collapsible Sidebar   | - HTML, CSS, **React**<br>- Toggle open/close using state<br>- Smooth CSS transition (bonus)<br>- Clean structure                                            | ✅ Done |
 | **2** | Animated Button       | - **Vanilla HTML + CSS**<br>- One or more CTA buttons<br>- Hover + active effects<br>- Use `transform`, `box-shadow`, `transition`                           | ✅ Done |
-| **3** | Simple Landing Page   | - HTML & CSS only<br>- Include header, hero section, CTA button<br>- Basic layout & typography<br>- Make it look neat                                        | 🔜      |
+| **3** | Simple Landing Page   | - HTML & CSS only<br>- Include header, hero section, CTA button<br>- Basic layout & typography<br>- Make it look neat                                        | ✅ Done |
 | **4** | Git Workflow Practice | - Create a repo clone<br>- Make a new branch<br>- Add/change a file<br>- Commit, merge, push<br>- Write clear commit messages                                | 🔜      |
 | **5** | CSS Art               | - Draw a simple shape/icon with **pure CSS**<br>- No images or SVGs<br>- Keep it recognizable & neat                                                         | 🔜      |
 | **6** | JS Utility            | - Write a small **vanilla JS** app<br>- Example: clock, random quote, counter<br>- Include basic DOM manipulation                                            | 🔜      |
