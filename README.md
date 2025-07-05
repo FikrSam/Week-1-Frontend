@@ -29,7 +29,7 @@ This is part of my personal commitment to grow as a developer by building small,
 ---
 
 ## 📂 **Structure**
-
+```
 Week-1-Frontend/
 ├── Day-1-sideBar/
 │ ├── src/...
@@ -38,6 +38,9 @@ Week-1-Frontend/
 ├── Day-2-animated-button/
 ├── Day-3-landing-page/
 ...
+
+```
+
 
 Each day has its own folder and README.
 
@@ -60,3 +63,4 @@ My goal is to stay consistent and build real, useful pieces, one day at a time.
 ---
 
 *Rule:  Progress, not perfection.*
+
