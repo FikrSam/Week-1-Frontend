@@ -35,6 +35,7 @@ Week-1-Frontend/
         ├── test.html
         ├── landingPage1.html
         ├── assets/
+        │ ├── FONT/
         │ ├── background-image.png
         │ └── scouts-emblem.png
         └─── README.md
