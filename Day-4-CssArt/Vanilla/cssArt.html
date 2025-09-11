@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+      }
+
+      .shell {
+        height: 430px;
+        width: 300px;
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        border: 3px solid black;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .yolk {
+        height: 190px;
+        width: 190px;
+        border-radius: 50%;
+        border: 3px solid black;
+        background-color: rgb(255, 183, 0);
+        margin-bottom: -130px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .eyes {
+        /* Set equal width and height for perfect circles */
+        width: 30px; /* Example: Adjust this value as needed */
+        height: 30px; /* Example: Adjust this value as needed */
+        border: 15px solid black;
+        background-color: black;
+        border-radius: 50%;
+      }
+
+      .shine {
+        /* Set equal width and height for perfect circles */
+        width: 16px; /* Example: Adjust this value as needed (should be smaller than eye) */
+        height: 16px; /* Example: Adjust this value as needed */
+        border: 8px solid white;
+        border-radius: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
+
+      .e-container {
+        /* border: 3px solid black; */
+        width: 120px;
+        height: 40px;
+        margin-top: -20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .mouth {
+        border: 3px solid black;
+        background-color: black;
+        width: 100px;
+        height: 40px;
+        border-radius: 7px 7px 150px 150px;
+        margin-bottom: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <div class="yolk">
+        <div class="e-container">
+          <div class="eyes">
+            <div class="shine"></div>
+          </div>
+          <div class="eyes">
+            <div class="shine"></div>
+          </div>
+        </div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+  </body>
+</html>
